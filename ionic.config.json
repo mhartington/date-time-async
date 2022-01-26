@@ -1,0 +1,7 @@
+{
+  "name": "tmp-ng",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
