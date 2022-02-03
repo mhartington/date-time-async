@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "tmp-ng",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

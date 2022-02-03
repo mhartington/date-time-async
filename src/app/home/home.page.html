@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Blank </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,9 +10,25 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+  <hr />
+  <div>
+    <h1>Date Issue</h1>
+    <ion-button (click)="offsetDate(-1)">Prev Day</ion-button>
+    <ion-button (click)="offsetDate(1)">Next Day</ion-button>
+    <div id="date-picker">{{ date | async | date }}</div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-modal trigger="date-picker">
+      <ng-template>
+        <ion-content force-overscroll="false">
+          <ion-datetime
+            #currentDatePicker
+            (ionChange)="setDate(currentDatePicker)"
+            presentation="date"
+            [value]="date | async | date:'yyyy-MM-ddThh:mm:ss.SSS'"
+          >
+          </ion-datetime>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </div>
 </ion-content>
